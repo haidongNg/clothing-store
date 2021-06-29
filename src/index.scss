@@ -1,13 +1,13 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+$ct-pink: #eda3b5;
+$ct-white: #ffffff;
+$ct-black: #1b2437;
+$ct-gray1: #eda3b5;
+$ct-gray2: #efeff4;
+$ct-gray3: #e5e5ea;
+$ct-gray4: #d1d1d6;
+$ct-gray5: #c7c7cc;
+$ct-gray6: #8e8e93;
+$ct-gray7: #48484a;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+
+@import '/node_modules/bulma/bulma.sass';

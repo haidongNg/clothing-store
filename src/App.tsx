@@ -1,10 +1,9 @@
 import { FC } from 'react';
-import './App.scss';
-
 const App: FC = () => {
   return (
-    <div className="App">
-      
+    <div>
+      <input type="text" className="input" />
+      <button type="button" className="button">ABC</button>
     </div>
   );
 };
