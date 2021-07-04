@@ -9,5 +9,63 @@ $ct-gray5: #c7c7cc;
 $ct-gray6: #8e8e93;
 $ct-gray7: #48484a;
 
+$primary: $ct-pink;
+$link: $ct-pink;
 
+$button-focus-border-color: $ct-pink;
+$button-active-border-color: $ct-pink;
+
+.section {
+  &.section--ct-hero {
+    height: auto;
+    background-color: #beb0ad;
+    position: relative;
+    .ct-hero-main {
+      height: 540px;
+      .ct-hero-content {
+        position: absolute;
+        top: 40%;
+        z-index: 1;
+      }
+
+      .ct-hero-image {
+        max-height: 540px;
+        position: absolute;
+        // background-image: url('./assets/image17.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+}
+
+.ct-collection {
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  border-radius: 16px;
+
+  &.ct-collection-image-1 {
+    background-image: url('./assets/image155.png');
+    height: 440px;
+  }
+
+  &.ct-collection-image-2 {
+    background-color: #efeff4;
+    height: 208px;
+  }
+
+  &.ct-collection-image-3 {
+    background-image: url('./assets/image18.png');
+    height: 208px;
+  }
+
+  &.ct-collection-image-4 {
+    background-image: url('./assets/image247.png');
+    height: 208px;
+  }
+}
 @import '/node_modules/bulma/bulma.sass';
