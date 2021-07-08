@@ -14,6 +14,7 @@ $link: $ct-pink;
 
 $button-focus-border-color: $ct-pink;
 $button-active-border-color: $ct-pink;
+$pagination-focus-border-color: $ct-pink;
 .ct-mw-container {
   max-width: 1140px;
   margin: auto;
@@ -181,6 +182,12 @@ $button-active-border-color: $ct-pink;
       border: none;
       .card-footer-item:not(:last-child) {
         border-right: none;
+      }
+      a {
+        color: #363636;
+        &:hover {
+          color: $ct-pink;
+        }
       }
     }
   }
