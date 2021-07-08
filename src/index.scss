@@ -167,19 +167,20 @@ $button-active-border-color: $ct-pink;
   .columns--your-my-like {
     max-width: 1140px;
     margin: auto;
-    .card {
-      &.card-ct-product {
-        border-radius: 1.25rem;
-        .card-image:first-child img {
-          border-top-left-radius: 16px;
-          border-top-right-radius: 16px;
-        }
-        .card-footer {
-          border: none;
-          .card-footer-item:not(:last-child) {
-            border-right: none;
-          }
-        }
+  }
+}
+
+.card {
+  &.card-ct-product {
+    border-radius: 1.25rem;
+    .card-image:first-child img {
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+    }
+    .card-footer {
+      border: none;
+      .card-footer-item:not(:last-child) {
+        border-right: none;
       }
     }
   }
