@@ -10,6 +10,7 @@ const ContactPage = lazy(() => import('./pages/contact/Contact'));
 const NotFoundPage = lazy(() => import('./pages/not-found/NotFound'));
 const SigninPage = lazy(() => import('./pages/signin/Signin'));
 const SignupPage = lazy(() => import('./pages/signup/Signup'));
+const ShopDetailPage = lazy(() => import('./pages/shop-detail/ShopDetail'));
 
 const App: FC = () => {
   return (
@@ -18,13 +19,14 @@ const App: FC = () => {
         <Header />
         <Suspense fallback={<div>Loading...</div>}>
           <Switch>
-            <Route path="/" children={<HomePage />} exact />
-            <Route path="/shop" children={<ShopPage />} />
-            <Route path="/contact" children={<ContactPage />} />
-            <Route path="/blog" children={<BlogPage />} />
-            <Route path="/signin" children={<SigninPage />} />
-            <Route path="/signup" children={<SignupPage />} />
-            <Route path="*" children={<NotFoundPage />} />
+            <Route path="/" component={HomePage} exact />
+            <Route path="/contact" component={ContactPage} />
+            <Route path="/blog" component={BlogPage} />
+            <Route path="/signin" component={SigninPage} />
+            <Route path="/signup" component={SignupPage} />
+            <Route path="/shop" component={ShopPage} exact />
+            <Route path="/shop/:id" component={ShopDetailPage} />
+            <Route path="*" component={NotFoundPage} />
           </Switch>
         </Suspense>
         <Footer />

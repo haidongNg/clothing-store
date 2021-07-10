@@ -11,7 +11,7 @@ const Header: FC = () => {
         <nav className="navbar is-transparent">
             <div className="navbar-brand">
                 <Link to="/" className="navbar-item">
-                    <img src="./logo.svg" alt="Bulma: a modern CSS framework based on Flexbox" width="50" height="28" />
+                    <img src="./logo.svg" alt="Logo" width="50" height="28" />
                 </Link>
                 <div className="navbar-burger" data-target="navbarExampleTransparentExample">
                     <span></span>
