@@ -17,6 +17,7 @@
     "@types/react-redux": "7.1.18",
     "@types/react-router-dom": "5.1.8",
     "axios": "0.21.1",
+    "node-sass": "^6.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-redux": "7.2.4",
@@ -30,8 +31,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "postinstall": "npm rebuild node-sass && npm install --unsafe-perm -f node-sass"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -52,8 +52,6 @@
     ]
   },
   "devDependencies": {
-    "bulma": "0.9.3",
-    "node-sass": "6.0.1",
-    "sass": "1.35.2"
+    "bulma": "0.9.3"
   }
 }

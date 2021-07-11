@@ -1,4 +1,4 @@
-import { FC, lazy, Suspense } from 'react';
+import { FC, lazy, Suspense, useEffect } from 'react';
 import { Header, Footer } from './layouts';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
@@ -13,6 +13,10 @@ const SignupPage = lazy(() => import('./pages/signup/Signup'));
 const ShopDetailPage = lazy(() => import('./pages/shop-detail/ShopDetail'));
 
 const App: FC = () => {
+
+  useEffect(() => {
+
+  },[]);
   return (
     <BrowserRouter>
       <div style={{ backgroundColor: '#F2F2F2' }}>
