@@ -1,10 +1,7 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 // Icon
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons/faSearch';
-import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons/faShoppingCart';
+
 
 const Header: FC = () => {
     return (
@@ -50,13 +47,13 @@ const Header: FC = () => {
                 </div>
                 <div className="navbar-end ml-0">
                     <Link to="/" className="navbar-item">
-                        <FontAwesomeIcon icon={faSearch} size="lg"></FontAwesomeIcon>
+                        {/* <FontAwesomeIcon icon={faSearch} size="lg"></FontAwesomeIcon> */}
                     </Link>
                     <Link to="/signin" className="navbar-item">
-                        <FontAwesomeIcon icon={faUser} size="lg"></FontAwesomeIcon>
+                        {/* <FontAwesomeIcon icon={faUser} size="lg"></FontAwesomeIcon> */}
                     </Link>
                     <Link to="/" className="navbar-item">
-                        <FontAwesomeIcon icon={faShoppingCart} size="lg"></FontAwesomeIcon>
+                        {/* <FontAwesomeIcon icon={faShoppingCart} size="lg"></FontAwesomeIcon> */}
                     </Link>
                 </div>
             </div>
