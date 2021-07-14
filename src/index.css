@@ -1,4 +1,4 @@
-$ct-pink: #eda3b5;
+/* $ct-pink: #eda3b5;
 $ct-white: #ffffff;
 $ct-black: #1b2437;
 $ct-gray1: #eda3b5;
@@ -10,5 +10,8 @@ $ct-gray6: #8e8e93;
 $ct-gray7: #48484a;
 
 $primary: $ct-pink;
-$link: $ct-pink;
+$link: $ct-pink; */
 
+body {
+    margin: 0;
+}
