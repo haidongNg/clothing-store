@@ -1,4 +1,4 @@
-import * as MemberService from '../../services/index';
+import * as MemberService from '../../core/services/index';
 import { Dispatch } from 'redux';
 interface FormLogin {
   email: string;

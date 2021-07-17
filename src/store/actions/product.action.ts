@@ -1,6 +1,6 @@
 import { Dispatch } from 'redux';
-import { Product } from '../../models';
-import * as productService  from '../../services/index';
+import { Product } from '../../core/models';
+import * as productService  from '../../core/services/index';
 
 /**
  * Get all product

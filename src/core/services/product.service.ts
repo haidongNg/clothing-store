@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import { environment as env } from '../environments/environment.prod';
+import { environment as env } from '../../environments/environment.prod';
 import { Product } from '../models';
 const apiUrl = `${env.apiURL}/products`;
 

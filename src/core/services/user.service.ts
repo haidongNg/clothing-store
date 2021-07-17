@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import { environment as env } from '../environments/environment.prod';
+import { environment as env } from '../../environments/environment.prod';
 
 const apiUrl = `${env.apiURL}/members/login`;
 

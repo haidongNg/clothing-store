@@ -1,4 +1,5 @@
 import { FC, lazy, Suspense, useEffect } from 'react';
+import './App.css';
 import { Header, Footer } from './layouts';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
@@ -19,7 +20,7 @@ const App: FC = () => {
   },[]);
   return (
     <BrowserRouter>
-      <div style={{ backgroundColor: '#F2F2F2' }}>
+      <div className="App">
         <Header />
         <Suspense fallback={<div>Loading...</div>}>
           <Switch>
@@ -33,7 +34,7 @@ const App: FC = () => {
             <Route path="*" component={NotFoundPage} />
           </Switch>
         </Suspense>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </BrowserRouter>
 
