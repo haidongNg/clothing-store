@@ -1,18 +1,33 @@
 import { FC } from 'react';
-import { Nav, NavLogo, NavbarContainer, MobileIcon, NavItem, NavMenu, NavLink } from './Navbar.style';
-
+import { Nav, NavLogo, NavbarContainer, MobileIcon, NavItem, NavMenu, NavLink, NavInputSearch } from './Navbar.style';
+import SearchIcon from '../../../assets/search.svg';
 type NavbarProps = {
     toggle: () => void;
 };
 
-const Navbar: FC<NavbarProps> = ({toggle}) => {
+const Navbar: FC<NavbarProps> = ({ toggle }) => {
     return (
-        <div>
+        <>
             <Nav>
                 <NavbarContainer>
                     <NavLogo to="/">logo</NavLogo>
                     <MobileIcon onClick={toggle}>icon</MobileIcon>
                     <NavMenu>
+                        <NavInputSearch image={SearchIcon} type="text" placeholder="Search for product ..." />
+                    </NavMenu>
+                    <NavMenu>
+                    <NavItem>
+                            <NavLink to="/contact">Signin</NavLink>
+                        </NavItem>
+                    </NavMenu>
+                </NavbarContainer>
+            </Nav>
+            <Nav className="nav-menu">
+                <NavbarContainer className="nav-menu">
+                    <NavMenu>
+                        <NavItem>
+                            <NavLink to="/">Home</NavLink>
+                        </NavItem>
                         <NavItem>
                             <NavLink to="/shop">Shop</NavLink>
                         </NavItem>
@@ -25,7 +40,7 @@ const Navbar: FC<NavbarProps> = ({toggle}) => {
                     </NavMenu>
                 </NavbarContainer>
             </Nav>
-        </div>
+        </>
     );
 };
 

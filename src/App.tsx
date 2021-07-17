@@ -34,7 +34,7 @@ const App: FC = () => {
             <Route path="*" component={NotFoundPage} />
           </Switch>
         </Suspense>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </BrowserRouter>
 

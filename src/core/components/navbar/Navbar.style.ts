@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { InputBase } from '../../styles/base.style';
 
 export const Nav = styled.nav`
   background: white;
@@ -13,6 +14,12 @@ export const Nav = styled.nav`
   top: 0;
   z-index: 10;
 
+  &.nav-menu {
+    @media screen and (max-width: 786px) {
+      display: none;
+    }
+  }
+
   @media screen and (max-width: 960px) {
     transition: 0.8 all ease;
   }
@@ -21,6 +28,9 @@ export const Nav = styled.nav`
 export const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  &.nav-menu {
+    justify-content: center;
+  }
   height: 80px;
   z-index: 1;
   width: 100%;
@@ -86,4 +96,11 @@ export const NavLink = styled(Link)`
     color: #eda3b5;
     transition: 0.2s ease-in-out;
   }
+`;
+
+export const NavInputSearch = styled(InputBase)`
+  padding: 0.5rem 0.5rem 0.5rem 1.7rem;
+  background-image: ${({ image }: { image: string }) => `url(${image})`};
+  background-repeat: no-repeat;
+  background-position: 0px 8px;
 `;
