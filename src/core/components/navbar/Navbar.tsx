@@ -17,7 +17,7 @@ const Navbar: FC<NavbarProps> = ({ toggle }) => {
                     </NavMenu>
                     <NavMenu>
                     <NavItem>
-                            <NavLink to="/contact">Signin</NavLink>
+                            <NavLink to="/signin">Signin</NavLink>
                         </NavItem>
                     </NavMenu>
                 </NavbarContainer>

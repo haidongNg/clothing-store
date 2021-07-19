@@ -1,7 +1,9 @@
 import { FC, FormEvent, useState } from 'react';
 import { connect } from 'react-redux';
-import {History} from 'history';
+import { History } from 'history';
 import { signin } from '../../store/actions/index';
+import { InputSign, ButtonSign } from './Signin.style';
+
 // Type
 interface FormSignin {
     email: string;
@@ -51,30 +53,25 @@ const Signin: FC<SigninProps> = (props) => {
                     <div className="field">
                         <label className="label">Email</label>
                         <div className="control">
-                            <input
-                                className="input"
-                                type="text"
+                            <InputSign type="text"
                                 name="email"
                                 placeholder="example@email.com"
                                 value={formSignin.email}
-                                onChange={(e) => handleOnChange(e)}
-                            />
+                                onChange={(e) => handleOnChange(e)} />
                         </div>
                     </div>
                     <div className="field">
                         <label className="label">Password</label>
                         <div className="control">
-                            <input
-                                className="input"
-                                type="password"
+                            <InputSign type="password"
                                 name="password"
                                 placeholder="********"
                                 value={formSignin.password}
-                                onChange={(e) => handleOnChange(e)}
-                            />
+                                onChange={(e) => handleOnChange(e)} />
                         </div>
                     </div>
-                    <button className="button" type="submit">Sign in</button>
+                    <ButtonSign type="submit">Sign in</ButtonSign>
+                    {/* <button className="button" type="submit">Sign in</button> */}
                 </form>
             </div>
         </div>
