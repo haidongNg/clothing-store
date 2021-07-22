@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { History } from 'history';
 import { signin } from '../../store/actions/index';
 import { InputSign, ButtonSign } from './Signin.style';
-
+import { CheckboxControl, InputCheckbox, CustomCheckbox, FormGroup, Label } from '../../core/styles/base.style';
 // Type
 interface FormSignin {
     email: string;
@@ -50,28 +50,30 @@ const Signin: FC<SigninProps> = (props) => {
         <div className="section is-medium">
             <div className="box" style={{ maxWidth: '400px' }}>
                 <form onSubmit={(e) => handleSubmit(e)}>
-                    <div className="field">
-                        <label className="label">Email</label>
-                        <div className="control">
-                            <InputSign type="text"
-                                name="email"
-                                placeholder="example@email.com"
-                                value={formSignin.email}
-                                onChange={(e) => handleOnChange(e)} />
-                        </div>
-                    </div>
-                    <div className="field">
-                        <label className="label">Password</label>
-                        <div className="control">
-                            <InputSign type="password"
-                                name="password"
-                                placeholder="********"
-                                value={formSignin.password}
-                                onChange={(e) => handleOnChange(e)} />
-                        </div>
-                    </div>
+                    <FormGroup>
+                        <Label>Email</Label>
+                        <InputSign type="text"
+                            name="email"
+                            placeholder="example@email.com"
+                            value={formSignin.email}
+                            onChange={(e) => handleOnChange(e)} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label>Password</Label>
+                        <InputSign type="password"
+                            name="password"
+                            placeholder="********"
+                            value={formSignin.password}
+                            onChange={(e) => handleOnChange(e)} />
+                    </FormGroup>
+                    <FormGroup>
+                        <CheckboxControl>
+                            ABC
+                            <InputCheckbox type="checkbox" />
+                            <CustomCheckbox />
+                        </CheckboxControl>
+                    </FormGroup>
                     <ButtonSign type="submit">Sign in</ButtonSign>
-                    {/* <button className="button" type="submit">Sign in</button> */}
                 </form>
             </div>
         </div>

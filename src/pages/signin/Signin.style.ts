@@ -3,4 +3,6 @@ import { ButtonBase, InputBase } from '../../core/styles/base.style';
 
 export const InputSign = styled(InputBase)``;
 
-export const ButtonSign = styled(ButtonBase)``;
+export const ButtonSign = styled(ButtonBase)`
+  margin: 0.5rem;
+`;

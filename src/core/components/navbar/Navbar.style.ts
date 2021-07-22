@@ -103,4 +103,10 @@ export const NavInputSearch = styled(InputBase)`
   background-image: ${({ image }: { image: string }) => `url(${image})`};
   background-repeat: no-repeat;
   background-position: 0px 8px;
+  border: none;
+  border-bottom: 2px solid #eda3b5;
+  &:focus {
+    border: none;
+    border-bottom: 2px solid #eda3b5;
+  }
 `;
