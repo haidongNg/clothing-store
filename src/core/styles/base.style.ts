@@ -139,3 +139,25 @@ export const Label = styled.label`
   display: inline-block;
   padding: 0.375rem 0.375rem;
 `;
+
+export const Column = styled.div`
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+`;
+
+export const Row = styled.div`
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  @media screen and (max-width: 600px) {
+    ${Column} {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+`;

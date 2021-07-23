@@ -2,7 +2,7 @@ import { FC, FormEvent, useState } from 'react';
 import { connect } from 'react-redux';
 import { History } from 'history';
 import { signin } from '../../store/actions/index';
-import { InputSign, ButtonSign } from './Signin.style';
+import { InputSign, ButtonSign, SignContainer,SignChild } from './Signin.style';
 import { CheckboxControl, InputCheckbox, CustomCheckbox, FormGroup, Label } from '../../core/styles/base.style';
 // Type
 interface FormSignin {
@@ -47,8 +47,8 @@ const Signin: FC<SigninProps> = (props) => {
     }
 
     return (
-        <div className="section is-medium">
-            <div className="box" style={{ maxWidth: '400px' }}>
+        <SignContainer>
+            <SignChild>
                 <form onSubmit={(e) => handleSubmit(e)}>
                     <FormGroup>
                         <Label>Email</Label>
@@ -75,8 +75,8 @@ const Signin: FC<SigninProps> = (props) => {
                     </FormGroup>
                     <ButtonSign type="submit">Sign in</ButtonSign>
                 </form>
-            </div>
-        </div>
+            </SignChild>
+        </SignContainer>
     );
 };
 
