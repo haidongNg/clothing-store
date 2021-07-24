@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
 // Input
-export const InputBase = styled.input`
+export const InputBase = styled.input.attrs((props) => ({
+  type: props.type ? props.type : 'text',
+}))`
   padding: 0.5rem;
-  margin: 0.5rem;
+  margin: 0.375rem;
   outline: none;
   border: 2px solid #e5e5ea;
   border-radius: 8px;
@@ -67,6 +69,7 @@ export const ButtonBase = styled.button`
   }
 `;
 
+// Checkbox
 export const CustomCheckbox = styled.span`
   position: absolute;
   top: 0;
@@ -81,28 +84,38 @@ export const CustomCheckbox = styled.span`
     display: none;
   }
 `;
-export const InputCheckbox = styled.input`
+
+export const InputCheckbox = styled.input.attrs((props) => ({
+  type: 'checkbox',
+}))`
   position: absolute;
   opacity: 0;
   cursor: pointer;
   height: 0;
   width: 0;
-  &:checked {
-    display: block;
-  }
 `;
 
 export const CheckboxControl = styled.label`
+  left: 0%;
+  right: 8.33%;
+  top: 8.33%;
+  bottom: 8.33%;
+  border-radius: 2px;
   display: block;
   position: relative;
-  padding-left: 2rem;
-  margin-left: 0.5rem;
+  margin-left: 0.375rem;
+  padding-left: 2.3rem;
+  margin-bottom: 12px;
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
+  &:hover ${InputCheckbox} ~ ${CustomCheckbox} {
+    background-color: #d1d1d6;
+  }
 
   ${InputCheckbox}:checked ~ ${CustomCheckbox} {
     background-color: #eda3b5;
@@ -119,8 +132,10 @@ export const CheckboxControl = styled.label`
   }
 
   ${CustomCheckbox}::after {
-    left: 9px;
-    top: 5px;
+    left: 31.17%;
+    right: 29.17%;
+    top: 21.34%;
+    bottom: 33.33%;
     width: 5px;
     height: 10px;
     border: solid #ffffff;
@@ -131,15 +146,90 @@ export const CheckboxControl = styled.label`
   }
 `;
 
+// Radio
+export const CustomRadio = styled.span`
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: #ffffff;
+  border: 2px solid #d1d1d6;
+  border-radius: 50%;
+  &::after {
+    content: '';
+    position: absolute;
+    display: none;
+  }
+`;
+
+export const InputRadio = styled.input.attrs((props) => ({
+  type: 'radio',
+}))`
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+`;
+
+export const RadioControl = styled.label`
+  left: 0%;
+  right: 8.33%;
+  top: 8.33%;
+  bottom: 8.33%;
+  display: block;
+  position: relative;
+  margin-left: 0.375rem;
+  padding-left: 2.3rem;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &:hover ${InputRadio} ~ ${CustomRadio} {
+    background-color: #d1d1d6;
+  }
+
+  ${InputRadio}:checked ~ ${CustomRadio} {
+    border: 2px solid #eda3b5;
+  }
+  ${InputRadio}:disabled ~ ${CustomRadio} {
+    mix-blend-mode: normal;
+    opacity: 0.4;
+  }
+
+  ${InputRadio}:checked ~ ${CustomRadio}::after {
+    display: block;
+  }
+
+  ${CustomRadio}::after {
+    left: 29.17%;
+    right: 29.17%;
+    top: 29.17%;
+    bottom: 29.17%;
+    background: #eda3b5;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+`;
+
+// Form group
 export const FormGroup = styled.div`
+  position: relative;
   margin-bottom: 0.5rem;
 `;
 
+// Label
 export const Label = styled.label`
   display: inline-block;
   padding: 0.375rem 0.375rem;
 `;
 
+
+// Grid
 export const Column = styled.div`
   float: left;
   width: 25%;
