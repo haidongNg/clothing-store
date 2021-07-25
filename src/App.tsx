@@ -1,7 +1,12 @@
 import { FC, lazy, Suspense, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { setCurrentMember, logout } from './store/actions';
 import './App.css';
-import { Header, Footer } from './layouts';
+import { Footer } from './layouts';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Header } from './core/components';
+import jwtDecode from 'jwt-decode';
+import { MemberInfo } from './core/models/member-info.model';
 
 // lazyload page
 const HomePage = lazy(() => import('./pages/home/Home'));
@@ -13,11 +18,30 @@ const SigninPage = lazy(() => import('./pages/signin/Signin'));
 const SignupPage = lazy(() => import('./pages/signup/Signup'));
 const ShopDetailPage = lazy(() => import('./pages/shop-detail/ShopDetail'));
 
-const App: FC = () => {
-
+type AppProps = {
+  logout: () => void;
+  setCurrentMember: (data: MemberInfo) => void;
+};
+const App: FC<AppProps> = ({ setCurrentMember, logout }) => {
   useEffect(() => {
+    const token = localStorage.getItem('STORE');
+    if (!token) {
+      return;
+    }
 
-  },[]);
+    const decode: MemberInfo = jwtDecode(token);
+
+    if (!decode) {
+      return;
+    }
+
+    setCurrentMember(decode);
+    if (Date.now() >= decode.exp * 1000) {
+      logout();
+    }
+    console.log(decode);
+    // eslint-disable-next-line
+  }, []);
   return (
     <BrowserRouter>
       <div className="App">
@@ -37,8 +61,8 @@ const App: FC = () => {
         <Footer />
       </div>
     </BrowserRouter>
-
   );
 };
 
-export default App;
+const conector = connect(null, { setCurrentMember, logout });
+export default conector(App);

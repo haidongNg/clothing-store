@@ -8,4 +8,7 @@ export namespace ActionTypeProduct {
 /**
  * User
  */
-export namespace ActionTypeUser {}
+export namespace ActionTypeUser {
+  export const SET_CURRENT_MEMBER = 'SET_CURRENT_MEMBER';
+  export const SET_CURRENT_MEMBER_EMPTY = 'SET_CURRENT_MEMBER_EMPTY';
+}

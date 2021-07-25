@@ -1,11 +1,12 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import {productReducer} from './reducers/index';
-import {logger} from 'redux-logger';
+import logger from 'redux-logger';
+import { memberReducer, productReducer } from './reducers/index';
 export const store = configureStore({
   reducer: {
-      product: productReducer,
+    product: productReducer,
+    member: memberReducer,
   },
-  middleware: [logger],
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
 
 export type AppDispatch = typeof store.dispatch;
