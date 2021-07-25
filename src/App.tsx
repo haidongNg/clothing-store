@@ -7,6 +7,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Header } from './core/components';
 import jwtDecode from 'jwt-decode';
 import { MemberInfo } from './core/models/member-info.model';
+import { RootState } from './store/store';
 
 // lazyload page
 const HomePage = lazy(() => import('./pages/home/Home'));
@@ -21,8 +22,9 @@ const ShopDetailPage = lazy(() => import('./pages/shop-detail/ShopDetail'));
 type AppProps = {
   logout: () => void;
   setCurrentMember: (data: MemberInfo) => void;
+  currentMember: MemberInfo,
 };
-const App: FC<AppProps> = ({ setCurrentMember, logout }) => {
+const App: FC<AppProps> = ({ setCurrentMember, logout, currentMember }) => {
   useEffect(() => {
     const token = localStorage.getItem('STORE');
     if (!token) {
@@ -39,9 +41,8 @@ const App: FC<AppProps> = ({ setCurrentMember, logout }) => {
     if (Date.now() >= decode.exp * 1000) {
       logout();
     }
-    console.log(decode);
     // eslint-disable-next-line
-  }, []);
+  }, [setCurrentMember, logout]);
   return (
     <BrowserRouter>
       <div className="App">
@@ -64,5 +65,9 @@ const App: FC<AppProps> = ({ setCurrentMember, logout }) => {
   );
 };
 
-const conector = connect(null, { setCurrentMember, logout });
+const mapStateToProps = (state: RootState) => ({
+  currentMember: state.member.currentMember,
+});
+
+const conector = connect(mapStateToProps, { setCurrentMember, logout });
 export default conector(App);

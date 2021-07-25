@@ -4,5 +4,4 @@ export interface MemberInfo {
     id: string;
     name: string;
     roles: string[];
-    isAuth: boolean;
 }

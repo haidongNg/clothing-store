@@ -3,7 +3,7 @@ import { ActionTypeUser } from '../action-types/action.type';
 
 // Define a type for the slice state
 interface MemberState {
-  infoMember?: MemberInfo;
+  currentMember?: MemberInfo;
 }
 
 // Define the initial state using that type
@@ -17,10 +17,10 @@ type Action = {
 const memberReducer = (state: MemberState = initialState, action: Action) => {
   switch (action.type) {
     case ActionTypeUser.SET_CURRENT_MEMBER:
-      state = { ...state, infoMember: { ...action.payload, isAuth: true } };
+      state = { ...state, currentMember: { ...action.payload} };
       return state;
     case ActionTypeUser.SET_CURRENT_MEMBER_EMPTY:
-      return { ...state, infoMember: { ...action.payload, isAuth: false } };
+      return { ...state, currentMember: { ...action.payload} };
     default:
       return state;
   }
