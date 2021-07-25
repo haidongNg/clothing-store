@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { History } from 'history';
 import { signin } from '../../store/actions/index';
 import { InputSign, ButtonSign, SignContainer, SignChild } from './Signin.style';
-import { CheckboxControl, InputCheckbox, CustomCheckbox, FormGroup, Label } from '../../core/styles/base.style';
+import { CheckboxControl, InputCheckbox, CustomCheckbox, FormGroup, Label, } from '../../core/styles/base.style';
 // Type
 interface FormSignin {
     email: string;

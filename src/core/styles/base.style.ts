@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-// Input
+// Control Input
 export const InputBase = styled.input.attrs((props) => ({
   type: props.type ? props.type : 'text',
 }))`
@@ -69,7 +69,7 @@ export const ButtonBase = styled.button`
   }
 `;
 
-// Checkbox
+// Control Checkbox
 export const CustomCheckbox = styled.span`
   position: absolute;
   top: 0;
@@ -119,7 +119,7 @@ export const CheckboxControl = styled.label`
 
   ${InputCheckbox}:checked ~ ${CustomCheckbox} {
     background-color: #eda3b5;
-    border: none;
+    border: 2px solid transparent;
   }
 
   ${InputCheckbox}:disabled ~ ${CustomCheckbox} {
@@ -146,7 +146,7 @@ export const CheckboxControl = styled.label`
   }
 `;
 
-// Radio
+// Control Radio
 export const CustomRadio = styled.span`
   position: absolute;
   top: 0;
@@ -228,11 +228,10 @@ export const Label = styled.label`
   padding: 0.375rem 0.375rem;
 `;
 
-
 // Grid
 export const Column = styled.div`
   float: left;
-  width: 25%;
+  width: 23%;
   padding: 0 10px;
 `;
 
@@ -250,4 +249,27 @@ export const Row = styled.div`
       margin-bottom: 20px;
     }
   }
+`;
+
+// Control Select
+export const Select = styled.select`
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  padding: 1rem 1.5rem;
+  background-color: #ffffff;
+  border: 2px solid #e5e5ea;
+  border-radius: 8px;
+`;
+export const Option = styled.option``;
+export const SelectWrapper = styled.div`
+  position: relative;
+  left: 0%;
+  right: 0%;
+  top: 38.89%;
+  bottom: 0%;
+  border: 2px solid #e5e5ea;
+  box-sizing: border-box;
+  border-radius: 8px;
 `;
