@@ -3,6 +3,7 @@ import { Dispatch } from 'redux';
 import jwtDecode from 'jwt-decode';
 import { ActionTypeUser } from '../action-types/action.type';
 import { MemberInfo } from '../../core/models/member-info.model';
+import SetHeader from '../../shared/helpers/set-header';
 
 // Type
 interface FormLogin {
@@ -23,6 +24,8 @@ export const signin = (formSign: FormLogin, callback: () => void) => {
     if (resp && !resp.token) {
       return;
     }
+    // Set header token
+    SetHeader(resp.token);
     // set token
     localStorage.setItem('STORE', resp.token);
     const decode = jwtDecode(resp.token);
@@ -33,9 +36,9 @@ export const signin = (formSign: FormLogin, callback: () => void) => {
 
 /**
  * Set decode token member
- *  
+ *
  * @param data
- * @returns 
+ * @returns
  */
 export const setCurrentMember = (data: MemberInfo) => {
   return {
@@ -46,12 +49,12 @@ export const setCurrentMember = (data: MemberInfo) => {
 
 /**
  * Logout
- * 
- * @returns 
+ *
+ * @returns
  */
 export const logout = () => {
   return (dispatch: Dispatch) => {
     localStorage.removeItem('STORE');
-    dispatch({type: ActionTypeUser.SET_CURRENT_MEMBER_EMPTY, payload: {}});
-  }
-}
+    dispatch({ type: ActionTypeUser.SET_CURRENT_MEMBER_EMPTY, payload: {} });
+  };
+};
