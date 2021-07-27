@@ -8,3 +8,5 @@ export { default as CollectionItem } from './collection-item/CollectionItem';
 export { default as Header } from './header/Header';
 export { default as Directory } from './directory/Directory';
 export { default as DirectoryItem } from './directory-item/DirectoryItem';
+export { default as CartIcon } from './cart-icon/CartIcon';
+export { default as CartDropdown } from './cart-dropdown/CartDropdown';

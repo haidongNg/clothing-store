@@ -1,10 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
-import { memberReducer, productReducer } from './reducers/index';
+import { cartReducer, memberReducer, productReducer } from './reducers/index';
 export const store = configureStore({
   reducer: {
     product: productReducer,
     member: memberReducer,
+    cart: cartReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });

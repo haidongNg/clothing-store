@@ -10,13 +10,16 @@ import { connect } from 'react-redux';
 import { RootState } from '../../../store/store';
 import { MemberInfo } from '../../models/member-info.model';
 import { logout } from '../../../store/actions';
+import CartIcon from '../cart-icon/CartIcon';
+import CartDropdown from '../cart-dropdown/CartDropdown';
 // Type
 type HeaderProps = {
   currentMember?: MemberInfo;
   logout: () => void;
+  hidden?: boolean;
 };
 
-const Header: FC<HeaderProps> = ({ currentMember, logout }) => {
+const Header: FC<HeaderProps> = ({ currentMember, logout, hidden }) => {
   return (
     <HeaderContainer>
       <LogoContainer to="/">
@@ -33,14 +36,17 @@ const Header: FC<HeaderProps> = ({ currentMember, logout }) => {
         ) : (
           <Option to="/signin">SIGNIN</Option>
         )}
+        <CartIcon />
       </Options>
+      {!hidden && <CartDropdown />}
     </HeaderContainer>
   );
 };
 
 // Get store
-const mapStateToProps = (state: RootState) => ({
-  currentMember: state.member.currentMember,
+const mapStateToProps = ({ member: { currentMember }, cart: { hidden } }: RootState) => ({
+  currentMember: currentMember,
+  hidden: hidden,
 });
 
 const conector = connect(mapStateToProps, { logout });
