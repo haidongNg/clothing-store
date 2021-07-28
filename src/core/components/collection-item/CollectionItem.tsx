@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { connect } from 'react-redux';
 import {
   CollectionItemContainer,
   CollectionImage,
@@ -7,26 +8,26 @@ import {
   CollectionPrice,
 } from './CollectionItem.style';
 
+import { addItem } from '../../../store/actions';
+import { Product } from '../../models';
+
 type CollectionItemProps = {
-  image: string;
-  name: string;
-  price: string;
+  item: Product;
+  addItem: (item: any) => void;
 };
-const CollectionItem: FC<CollectionItemProps> = ({
-  image,
-  name,
-  price,
-  ...props
-}) => {
+const CollectionItem: FC<CollectionItemProps> = ({ item, addItem }) => {
   return (
     <CollectionItemContainer>
-      <CollectionImage src={image} />
+      <CollectionImage src={item.imageUrl} />
       <CollectionFooter>
-        <CollectionName>{name}</CollectionName>
-        <CollectionPrice>{price}</CollectionPrice>
+        <CollectionName>{item.name}</CollectionName>
+        <CollectionPrice>{item.price}</CollectionPrice>
       </CollectionFooter>
+      <button onClick={() => addItem(item)}>ADD TO CART</button>
     </CollectionItemContainer>
   );
 };
 
-export default CollectionItem;
+
+const conector = connect(null, { addItem })
+export default conector(CollectionItem);

@@ -53,10 +53,11 @@ const App: FC<AppProps> = ({ setCurrentMember, logout, currentMember }) => {
             <Route path="/" component={HomePage} exact />
             <Route path="/contact" component={ContactPage} />
             <Route path="/blog" component={BlogPage} />
-            <GuardRoute component={SigninPage} currentMember={currentMember} />
+            
             <Route path="/signup" component={SignupPage} />
             <Route path="/shop" component={ShopPage} exact />
             <Route path="/shop/:id" component={ShopDetailPage} />
+            <GuardRoute component={SigninPage} currentMember={currentMember} />
             <Route path="*" component={NotFoundPage} />
           </Switch>
         </Suspense>

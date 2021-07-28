@@ -17,8 +17,8 @@ const CollectionPreview: FC<CollectionPreviewProps> = ({ title, items }) => {
       <Preview>
         {items
           .filter((item, idx) => idx < 4)
-          .map(({ ...otherProps }, index) => (
-            <CollectionItem key={index} {...otherProps} />
+          .map((item) => (
+            <CollectionItem key={item.id} item={item} />
           ))}
       </Preview>
     </CollectionPreviewContainer>

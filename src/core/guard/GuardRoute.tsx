@@ -9,19 +9,15 @@ type GuardRouteProps = {
     | ComponentType<any>
     | LazyExoticComponent<ComponentType<any>>;
   currentMember?: MemberInfo;
-  exact?: boolean;
 };
 
 const GuardRoute: FC<GuardRouteProps> = ({
   component: ComponentType,
-  currentMember,
-  exact,
-  ...rest
+  currentMember,...rest
 }) => {
   return (
     <Route
       {...rest}
-      exact={exact}
       render={(props) =>
         currentMember && Object.keys(currentMember).length > 0 ? (
           <Redirect to="/" />
