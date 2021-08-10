@@ -19,6 +19,7 @@ const NotFoundPage = lazy(() => import('./pages/not-found/NotFound'));
 const SigninPage = lazy(() => import('./pages/signin/Signin'));
 const SignupPage = lazy(() => import('./pages/signup/Signup'));
 const ShopDetailPage = lazy(() => import('./pages/shop-detail/ShopDetail'));
+const CheckoutPage = lazy(() => import('./pages/checkout/Checkout'));
 
 type AppProps = {
   logout: () => void;
@@ -53,7 +54,7 @@ const App: FC<AppProps> = ({ setCurrentMember, logout, currentMember }) => {
             <Route path="/" component={HomePage} exact />
             <Route path="/contact" component={ContactPage} />
             <Route path="/blog" component={BlogPage} />
-            
+            <Route path="/checkout" component={CheckoutPage} />
             <Route path="/signup" component={SignupPage} />
             <Route path="/shop" component={ShopPage} exact />
             <Route path="/shop/:id" component={ShopDetailPage} />

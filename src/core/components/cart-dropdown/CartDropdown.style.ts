@@ -24,3 +24,8 @@ export const CartDropdownItems = styled.div`
 export const CardDropdownBtn = styled.button`
   margin: auto;
 `;
+
+export const CardEmptyMessage = styled.span`
+  font-size: 18p;
+  margin: 50px auto;
+`;
