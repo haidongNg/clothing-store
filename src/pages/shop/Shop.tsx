@@ -4,6 +4,7 @@ import { Collection, Product } from '../../core/models';
 import { CollectionPreview } from '../../core/components';
 import { ShopContainer } from './Shop.style';
 import SHOP_DATA from './shop.data.js';
+
 // Type Props
 type ShopProps = {
   getAllProduct: (callback: (val: Product[]) => void) => void;
