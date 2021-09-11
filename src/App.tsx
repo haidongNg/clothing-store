@@ -26,6 +26,7 @@ type AppProps = {
   setCurrentMember: (data: MemberInfo) => void;
   currentMember: MemberInfo,
 };
+
 const App: FC<AppProps> = ({ setCurrentMember, logout, currentMember }) => {
   useEffect(() => {
     const token = localStorage.getItem('STORE');
@@ -45,6 +46,7 @@ const App: FC<AppProps> = ({ setCurrentMember, logout, currentMember }) => {
     }
     // eslint-disable-next-line
   }, [setCurrentMember, logout]);
+
   return (
     <BrowserRouter>
       <div className="App">
