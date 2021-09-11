@@ -13,10 +13,21 @@ export const CheckoutItemImageContainer = styled.div`
   }
 `;
 
+export const CheckoutItemArrow = styled.div``;
+
+export const CheckoutItemValue = styled.span``;
+
 export const CheckoutItemSpan = styled.span`
   width: 23%;
   &.quantity {
-    padding-left: 20px;
+    display: flex;
+    ${CheckoutItemArrow} {
+      cursor: pointer;
+    }
+
+    ${CheckoutItemValue} {
+      margin: 0px 10px;
+    }
   }
 `;
 
@@ -34,3 +45,4 @@ export const CheckoutItemContainer = styled.div`
   font-size: 20px;
   align-items: center;
 `;
+
