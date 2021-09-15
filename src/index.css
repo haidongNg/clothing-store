@@ -1,17 +1,3 @@
-/* $ct-pink: #eda3b5;
-$ct-white: #ffffff;
-$ct-black: #1b2437;
-$ct-gray1: #eda3b5;
-$ct-gray2: #efeff4;
-$ct-gray3: #e5e5ea;
-$ct-gray4: #d1d1d6;
-$ct-gray5: #c7c7cc;
-$ct-gray6: #8e8e93;
-$ct-gray7: #48484a;
-
-$primary: $ct-pink;
-$link: $ct-pink; */
-
-body {
-    margin: 0;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

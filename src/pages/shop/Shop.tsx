@@ -2,7 +2,6 @@ import { FC, useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Collection, Product } from '../../core/models';
 import { CollectionPreview } from '../../core/components';
-import { ShopContainer } from './Shop.style';
 import SHOP_DATA from './shop.data.js';
 
 // Type Props
@@ -21,9 +20,9 @@ const Shop: FC<ShopProps> = (props) => {
   }, []);
 
   return (
-    <ShopContainer>
+    <div className="bg-white">
       {collectionList.map(({ id, ...otherCollectioProps }) => <CollectionPreview key={id} {...otherCollectioProps} />)}
-    </ShopContainer>
+    </div>
   );
 };
 
