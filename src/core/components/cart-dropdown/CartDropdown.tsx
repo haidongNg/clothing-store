@@ -23,7 +23,7 @@ const CartDropdown: FC<CartDropdownProps> = ({ cartItems, toggleCartHidden }) =>
         className="fixed inset-0 overflow-hidden z-50"
         aria-labelledby="slide-over-title"
         role="dialog"
-        aria-modal="true" onClick={() => toggleCartHidden()}
+        aria-modal="true"
       >
         <div className="absolute inset-0 overflow-hidden">
           {/*
@@ -110,7 +110,7 @@ Leaving: "ease-in-out duration-500"
                   </p>
                   <div className="mt-6">
                     <Link
-                      to="/checkout"
+                      to="/checkout" onClick={() => toggleCartHidden()}
                       className="flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
                     >
                       Checkout
