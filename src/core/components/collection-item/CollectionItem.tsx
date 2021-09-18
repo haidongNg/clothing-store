@@ -9,7 +9,7 @@ type CollectionItemProps = {
 };
 const CollectionItem: FC<CollectionItemProps> = ({ item, addItem }) => {
   return (
-    <div className="group relative" onClick={() => addItem(item)}>
+    <div className="group relative">
       <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
         <img src={item.imageUrl} alt="Product" className="w-full h-full object-center object-cover lg:w-full lg:h-full" />
       </div>
@@ -24,7 +24,7 @@ const CollectionItem: FC<CollectionItemProps> = ({ item, addItem }) => {
         </div>
         <p className="text-sm font-medium text-gray-900">{item.price}</p>
       </div>
-      <button onClick={() => addItem(item)}>ADD TO CART</button>
+      <button className="block uppercase w-full p-4 rounded absolute" onClick={() => addItem(item)}>ADD TO CART</button>
     </div>
   );
 };

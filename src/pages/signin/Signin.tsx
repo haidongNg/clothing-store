@@ -49,8 +49,8 @@ const Signin: FC<SigninProps> = (props) => {
   };
 
   return (
-    <div className="flex items-center h-auto w-full bg-teal-lighter">
-      <div className="w-full bg-white rounded shadow-lg p-8 m-4">
+    <div className="flex items-center h-auto w-full bg-teal-lighter my-8">
+      <div className="w-full max-w-sm bg-white rounded shadow-lg p-8 mx-auto">
         <h1 className="block w-full uppercase text-center font-bold text-3xl text-grey-darkest mb-6">Sign Up</h1>
         <form className="mb-4" onSubmit={(e) => handleSubmit(e)}>
           <div className="flex flex-col mb-4">
@@ -58,7 +58,6 @@ const Signin: FC<SigninProps> = (props) => {
             <input type="email" name="email" placeholder="example@email.com" className="form-input py-2 px-3 rounded-xl" value={formSignin.email}
               onChange={(e) => handleOnChange(e)} />
           </div>
-
           <div className="flex flex-col mb-4">
             <label className="mb-2 uppercase font-bold text-lg" htmlFor="password">Password</label>
             <input type="password" name="password" placeholder="********" value={formSignin.password} className="form-input py-2 px-3 rounded-xl"
@@ -68,7 +67,6 @@ const Signin: FC<SigninProps> = (props) => {
           <button className="block uppercase mx-auto p-4 rounded" type="submit">Sign in</button>
         </form>
       </div>
-
     </div>
   );
 };
