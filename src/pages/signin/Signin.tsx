@@ -53,18 +53,25 @@ const Signin: FC<SigninProps> = (props) => {
       <div className="w-full max-w-sm bg-white rounded shadow-lg p-8 mx-auto">
         <h1 className="block w-full uppercase text-center font-bold text-3xl text-grey-darkest mb-6">Sign Up</h1>
         <form className="mb-4" onSubmit={(e) => handleSubmit(e)}>
-          <div className="flex flex-col mb-4">
-            <label className="mb-2 uppercase font-bold text-lg" htmlFor="email">Email</label>
-            <input type="email" name="email" placeholder="example@email.com" className="form-input py-2 px-3 rounded-xl" value={formSignin.email}
+          <div className="flex flex-col space-y-2">
+            <label className="text-gray-700 select-none font-medium" htmlFor="email">Email</label>
+            <input type="email" name="email" placeholder="example@email.com"
+              className="w-full rounded-lg border-2 border-gray-200 px-4 py-2 outline-none focus:border-green-300" value={formSignin.email}
               onChange={(e) => handleOnChange(e)} />
           </div>
-          <div className="flex flex-col mb-4">
-            <label className="mb-2 uppercase font-bold text-lg" htmlFor="password">Password</label>
-            <input type="password" name="password" placeholder="********" value={formSignin.password} className="form-input py-2 px-3 rounded-xl"
+          <div className="flex flex-col space-y-2">
+            <label className="text-gray-700 select-none font-medium" htmlFor="password">Password</label>
+            <input type="password" name="password" placeholder="********" value={formSignin.password}
+              className="w-full rounded-lg border-2 border-gray-200 px-4 py-2 outline-none focus:border-green-300"
               onChange={(e) => handleOnChange(e)} />
           </div>
-
-          <button className="block uppercase mx-auto p-4 rounded" type="submit">Sign in</button>
+          <div className="flex flex-col space-y-2">
+            <div className="w-full px-6 my-5">
+              <button className="w-full mx-auto block max-w-xs uppercase px-3 py-3 rounded-lg bg-green-500 hover:bg-green-700 focus:bg-green-700 text-white font-semibold" type="submit">
+                Sign in
+              </button>
+            </div>
+          </div>
         </form>
       </div>
     </div>
