@@ -70,6 +70,7 @@ const App: FC<AppProps> = ({ setCurrentMember, logout, currentMember }) => {
   );
 };
 
+//
 const mapStateToProps = (state: RootState) => ({
   currentMember: state.member.currentMember,
 });
