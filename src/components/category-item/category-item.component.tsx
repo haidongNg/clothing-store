@@ -1,11 +1,11 @@
 import React from "react";
 import "./category-item.styles.scss";
 
-interface Props {
+interface IProps {
   category: { id: number; title: string; imageUrl: string };
 };
 
-const CategoryItem: React.FunctionComponent<Props> = ({ category }) => {
+const CategoryItem: React.FunctionComponent<IProps> = ({ category }) => {
   const { id, title, imageUrl } = category;
   return (
     <div key={id} className="category-container">
