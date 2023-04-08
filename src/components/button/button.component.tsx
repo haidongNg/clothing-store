@@ -15,7 +15,7 @@ const BUTTON_TYPE_CLASSES = {
 };
 interface IProps {
   children?: React.ReactNode;
-  buttonOptions: ButtonHTMLAttributes<HTMLButtonElement>;
+  buttonOptions?: ButtonHTMLAttributes<HTMLButtonElement>;
   buttonType?: string;
 }
 
