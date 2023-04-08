@@ -1,9 +1,9 @@
 import React, { SetStateAction, createContext } from "react";
 import { useState } from "react";
 import PRODUCT from "../shop-data.json";
-import { Product } from "../types/product.interface";
+import { IProduct } from "../types/product.interface";
 export interface IProductContextType {
-  products: Product[];
+  products: IProduct[];
   setProducts: React.Dispatch<SetStateAction<any>>;
 }
 
