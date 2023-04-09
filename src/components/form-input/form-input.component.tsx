@@ -1,27 +1,24 @@
 import React, { InputHTMLAttributes } from "react";
-import "./form-input.styles.scss";
+import { Group, FormInputLabel, Input } from "./form-input.styles";
 
 interface IProps {
   label: string;
-  inputOptions: InputHTMLAttributes<HTMLInputElement>
+  inputOptions: InputHTMLAttributes<HTMLInputElement>;
 }
 
 const FormInput: React.FunctionComponent<IProps> = ({
   label,
-  inputOptions
+  inputOptions,
 }) => {
   return (
-    <div className="group">
+    <Group className="group">
+      <Input {...inputOptions} />
       {label && (
-        <label
-            htmlFor={inputOptions?.id}
-          className={`${inputOptions.value ? "shrink" : ""} form-input-label`}
-        >
+        <FormInputLabel shrink={inputOptions.value?.toString.length}>
           {label}
-        </label>
+        </FormInputLabel>
       )}
-      <input className="form-input" {...inputOptions} />
-    </div>
+    </Group>
   );
 };
 

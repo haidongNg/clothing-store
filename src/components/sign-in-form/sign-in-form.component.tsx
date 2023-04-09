@@ -84,7 +84,7 @@ const SignInForm: React.FunctionComponent<IProps> = () => {
         <div className="buttons-container">
           <Button buttonOptions={{ type: "submit" }}>Sign In</Button>
           <Button
-            buttonType="google"
+            buttonType="google-sign-in"
             buttonOptions={{ type: "button", onClick: signInWithGoogle }}
           >
             Google sign in
