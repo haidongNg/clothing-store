@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import "./checkout-item.component.scss";
+import "./checkout-item.styles.scss";
 import { ICartItem } from "../../types/cart.interface";
 import { CartContext } from "../../contexts/cart.context";
 

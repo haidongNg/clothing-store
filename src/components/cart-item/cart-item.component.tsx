@@ -1,5 +1,5 @@
 import React from "react";
-import "./cart-item.component.scss";
+import "./cart-item.styles.scss";
 import { ICartItem } from "../../types/cart.interface";
 
 interface IProps {

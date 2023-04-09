@@ -13,7 +13,8 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
-import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
+import { getFirestore, doc, getDoc, setDoc, collection, writeBatch, query, getDocs } from "firebase/firestore";
+import { IShopData } from "../../types/product.interface";
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBryJkHbIYqrR0-jGNM3fg6-rY-TJciSCw",
@@ -122,3 +123,28 @@ export const signOutUser = async () => signOut(auth);
 export const onAuthStateChangedlistener = (
   callback: (user?: User | any) => void
 ) => onAuthStateChanged(auth, callback);
+
+export const addCollectionAndDocuments = async (collectionKey: string, objectsToAdd: IShopData[]) => {
+  const collectionRef = collection(db, collectionKey);
+  const batch = writeBatch(db);
+
+  objectsToAdd.forEach((object) => {
+    const docRef = doc(collectionRef, object.title.toLowerCase());
+    batch.set(docRef, object);
+  });
+
+  await batch.commit();
+}
+
+export const getCategoriesAndDocuments = async () => {
+  const collectionRef = collection(db, 'categories');
+  const q = query(collectionRef);
+
+  const querySnapshot = await getDocs(q);
+  const categoryMap = querySnapshot.docs.reduce((acc, docSnapshot) => {
+    const { title, items } = docSnapshot.data();
+    acc[title.toLowerCase()] = items;
+    return acc;
+  }, {} as { [key: string]: string });
+  return categoryMap;
+}

@@ -4,3 +4,9 @@ export interface IProduct {
     imageUrl: string;
     price: number;
 }
+
+export interface IShopData {
+    id: number,
+    title: string;
+    items: IProduct[];
+}
