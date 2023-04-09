@@ -15,8 +15,7 @@ import {
 } from "firebase/auth";
 import { getFirestore, doc, getDoc, setDoc, collection, writeBatch, query, getDocs } from "firebase/firestore";
 import { IShopData } from "../../types/product.interface";
-const configValue: any = process.env.API_KEY
-console.log(configValue);
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
