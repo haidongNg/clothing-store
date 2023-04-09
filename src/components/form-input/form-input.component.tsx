@@ -14,7 +14,7 @@ const FormInput: React.FunctionComponent<IProps> = ({
     <Group className="group">
       <Input {...inputOptions} />
       {label && (
-        <FormInputLabel shrink={inputOptions.value?.toString.length}>
+        <FormInputLabel htmlFor={inputOptions.id} shrink={inputOptions.value}>
           {label}
         </FormInputLabel>
       )}

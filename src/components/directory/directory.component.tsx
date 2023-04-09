@@ -1,6 +1,6 @@
 import React from "react";
 import DirectoryItem from "../directory-item/directory-item.component";
-import "./directory.styles.scss";
+import { CategoriesContainer } from "./directory.styles";
 
 const categories = [
   {
@@ -39,11 +39,11 @@ interface IProps {}
 
 const Directory: React.FunctionComponent<IProps> = () => {
   return (
-    <div className="categories-container">
+    <CategoriesContainer>
       {categories.map((category) => (
         <DirectoryItem key={category.id} category={category} />
       ))}
-    </div>
+    </CategoriesContainer>
   );
 };
 

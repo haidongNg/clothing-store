@@ -22,6 +22,10 @@ export const BaseButton = styled.button`
     color: black;
     border: 1px solid black;
   }
+  &:active {
+    background-color: white;
+    transform: translateY(4px)
+  }
 `;
 export const GoogleSignButton = styled(BaseButton)`
   background-color: #4285f4;
@@ -30,6 +34,10 @@ export const GoogleSignButton = styled(BaseButton)`
   &:hover {
     background-color: #357ae8;
     border: none;
+  }
+  &:active {
+    background-color: #357ae8;
+    transform: translateY(4px)
   }
 `;
 
@@ -42,5 +50,9 @@ export const InvertedButton = styled(BaseButton)`
     background-color: black;
     color: white;
     border: none;
+  }
+  &:active {
+    background-color: black;
+    transform: translateY(4px)
   }
 `;

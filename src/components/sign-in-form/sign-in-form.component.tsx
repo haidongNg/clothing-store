@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./sign-in-form.styles.scss";
+import { SignInContainer, ButtonContainer } from "./sign-in-form.styles";
 import Button from "../button/button.component";
 import FormInput from "../form-input/form-input.component";
 import {
@@ -55,7 +55,7 @@ const SignInForm: React.FunctionComponent<IProps> = () => {
   };
 
   return (
-    <div className="sign-in-container">
+    <SignInContainer>
       <h2>Don't have an account?</h2>
       <span>Sign in with your email and password</span>
       <form onSubmit={handleSubmit}>
@@ -81,7 +81,7 @@ const SignInForm: React.FunctionComponent<IProps> = () => {
             value: password,
           }}
         />
-        <div className="buttons-container">
+        <ButtonContainer>
           <Button buttonOptions={{ type: "submit" }}>Sign In</Button>
           <Button
             buttonType="google-sign-in"
@@ -89,9 +89,9 @@ const SignInForm: React.FunctionComponent<IProps> = () => {
           >
             Google sign in
           </Button>
-        </div>
+        </ButtonContainer>
       </form>
-    </div>
+    </SignInContainer>
   );
 };
 

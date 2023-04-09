@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./sign-up-form.styles.scss";
+import { SignUpContainer } from "./sign-up-form.styles";
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
@@ -62,14 +62,14 @@ const SignUpForm: React.FunctionComponent<IProps> = () => {
   };
 
   return (
-    <div className="sign-up-container">
+    <SignUpContainer>
       <h2>Don't have an account?</h2>
       <span>Sign up with your email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput
           label="Display Name"
           inputOptions={{
-            id: 'displayName',
+            id: "displayName",
             type: "text",
             required: true,
             name: "displayName",
@@ -80,7 +80,7 @@ const SignUpForm: React.FunctionComponent<IProps> = () => {
         <FormInput
           label="Email"
           inputOptions={{
-            id: 'email',
+            id: "email",
             type: "email",
             required: true,
             name: "email",
@@ -91,7 +91,7 @@ const SignUpForm: React.FunctionComponent<IProps> = () => {
         <FormInput
           label="Password"
           inputOptions={{
-            id: 'password',
+            id: "password",
             type: "password",
             required: true,
             name: "password",
@@ -102,7 +102,7 @@ const SignUpForm: React.FunctionComponent<IProps> = () => {
         <FormInput
           label="Confirm Password"
           inputOptions={{
-            id: 'confirmPassword',
+            id: "confirmPassword",
             type: "password",
             required: true,
             name: "confirmPassword",
@@ -110,9 +110,9 @@ const SignUpForm: React.FunctionComponent<IProps> = () => {
             value: confirmPassword,
           }}
         />
-        <Button  buttonOptions={{type: 'submit'}}>Sign Up</Button>
+        <Button buttonOptions={{ type: "submit" }}>Sign Up</Button>
       </form>
-    </div>
+    </SignUpContainer>
   );
 };
 

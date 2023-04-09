@@ -1,8 +1,11 @@
 import React from "react";
-import "./category-preview.styles.scss";
+import {
+  CategoryPreviewContainer,
+  CategoryPreviewTitle,
+  CategoryPreviewBody,
+} from "./category-preview.styles";
 import { IProduct } from "../../types/product.interface";
 import ProductCard from "../product-card/product-card.component";
-import { Link } from "react-router-dom";
 
 interface IProps {
   title: string;
@@ -13,21 +16,19 @@ const CategoryPreview: React.FunctionComponent<IProps> = ({
   products,
 }) => {
   return (
-    <div className="category-preview-container">
+    <CategoryPreviewContainer>
       <h2>
-        <Link className="title" to={title}>
-          {title && title.toUpperCase()}
-        </Link>
+        <CategoryPreviewTitle to={title}>{title}</CategoryPreviewTitle>
       </h2>
-      <div className="preview">
+      <CategoryPreviewBody>
         {products &&
           products
             .filter((_, idx) => idx < 4)
             .map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
-      </div>
-    </div>
+      </CategoryPreviewBody>
+    </CategoryPreviewContainer>
   );
 };
 
